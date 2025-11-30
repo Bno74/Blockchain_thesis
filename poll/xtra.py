@@ -26,15 +26,17 @@ def otp_gen():
     return randomNumber
 
 def passPhrase():
-    length = random.randint(6,11)
-    API_KEY = os.getenv("API_NINJA_API")
-    api_url = 'https://api.api-ninjas.com/v1/passwordgenerator?length={}'.format(length)
-    response = requests.get(api_url, headers={'X-Api-Key': API_KEY })
-    if response.status_code == requests.codes.ok:
-        data = response.json()
-        return data["random_password"]
-    else:
-        print("Error:", response.status_code, response.text)
+    # Local passphrase generator - no external API required
+    import string
+    length = random.randint(8, 12)  # Generate 8-12 character passphrase
+    
+    # Create a mix of letters, numbers, and some safe special characters
+    characters = string.ascii_letters + string.digits + "!@#$%^&*"
+    
+    # Generate random passphrase
+    passphrase = ''.join(random.choice(characters) for i in range(length))
+    
+    return passphrase
 
 
 def encrypt(password,message1,message2):

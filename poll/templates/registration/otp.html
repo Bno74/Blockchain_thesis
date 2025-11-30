@@ -18,6 +18,14 @@
                 <input type="submit" value="Validate OTP And Generate Token" class="btn btn-primary my-5" style="font-size: 1.4vw;">
                 <input type="hidden" name="username" value="{{ username }}" />
             </form>
+            
+            <div class="mt-3 p-3 bg-light rounded">
+                <small class="text-info">
+                    <strong>🔔 SMS is disabled for testing</strong><br>
+                    <strong>Your OTP is: {{ otp_number }}</strong><br>
+                    <em>In production, this would be sent via SMS</em>
+                </small>
+            </div>
         </div>
     </div>
 </div>
