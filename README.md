@@ -1,6 +1,4 @@
-# Z-Vote
 
-A Blockchain-Based E-Voting System.
 
 ## Documentation
 
